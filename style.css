@@ -188,6 +188,57 @@ h2 {
   font-size: 0.92rem;
 }
 
+.weather-widget {
+  max-width: 640px;
+  margin: 24px auto 0;
+  padding: 16px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(255, 241, 216, 0.72)),
+    rgba(255, 255, 255, 0.70);
+  box-shadow: 0 18px 45px rgba(133, 57, 82, 0.12);
+  text-align: left;
+}
+
+.weather-main {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.weather-emoji {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 12px 28px rgba(133, 57, 82, 0.10);
+  font-size: 1.85rem;
+}
+
+.weather-widget strong {
+  display: block;
+  margin: 2px 0 5px;
+  font-size: 1.02rem;
+  color: var(--ink);
+}
+
+.weather-widget p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.weather-meta {
+  margin: 12px 0 0 62px;
+  color: var(--brand-dark);
+  font-size: 0.84rem;
+  font-weight: 850;
+}
+
 .mood-grid {
   margin-top: 30px;
   display: grid;
@@ -394,4 +445,7 @@ blockquote {
   .primary-btn, .ghost-btn { width: 100%; }
   .text-btn { width: auto; }
   .experience-links a { width: 100%; }
+  .weather-main { grid-template-columns: 42px 1fr; }
+  .weather-emoji { width: 42px; height: 42px; border-radius: 15px; font-size: 1.55rem; }
+  .weather-meta { margin-left: 54px; }
 }
