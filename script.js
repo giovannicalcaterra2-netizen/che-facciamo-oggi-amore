@@ -1,5 +1,55 @@
 const plans = [
   {
+    key: "orrido",
+    emoji: "🏞️",
+    title: "Mood Orrido, ma romantico",
+    short: "Canyon, cascate e poi gelato/bibita.",
+    description: "Se troviamo posto, ti porto dentro un canyon a due passi da Trento: acqua, roccia, passerelle e atmosfera da mini avventura. Poi torniamo persone normali con gelato o bibita fresca.",
+    time: "Ideale nel pomeriggio, ma dipende dagli orari/slot disponibili.",
+    budget: "Basso/medio: biglietto visita + eventuale gelato o bibita.",
+    dress: "Scarpe comode, niente outfit troppo delicato: è pur sempre un orrido.",
+    backup: "Se non troviamo posto o il meteo rompe, facciamo shopping easy o piano VR in centro.",
+    linkTitle: "Controlliamo disponibilità e info?",
+    links: [
+      { label: "Sito Orrido", url: "https://www.orrido.trento.it/" },
+      { label: "Indicazioni Maps", url: "https://www.google.com/maps/search/Orrido+di+Ponte+Alto+Trento" },
+    ],
+  },
+  {
+    key: "lido",
+    emoji: "🏊",
+    title: "Mood lido e sopravvivenza al caldo",
+    short: "Piscina, telo, relax e gelatino dopo.",
+    description: "Piano semplice e molto estivo: costume, telo, un paio d’ore a mollo e zero pensieri. Se ci va, dopo prendiamo qualcosa di fresco e chiudiamo il pomeriggio con calma.",
+    time: "Perfetto dopo le 16:00, così evitiamo il sole peggiore.",
+    budget: "Medio-basso: ingresso piscina + eventuale gelato/bibita.",
+    dress: "Costume, telo, ciabatte e voglia di non morire di caldo.",
+    backup: "Se il tempo gira male, niente tragedie: shopping o bar fresco.",
+    linkTitle: "Scegliamo la piscina?",
+    links: [
+      { label: "ASIS Piscine", url: "https://www.asis.trento.it/impianti/piscine/" },
+      { label: "Lido Fogazzaro", url: "https://www.google.com/maps/search/Lido+Fogazzaro+Trento" },
+      { label: "Trento Nord", url: "https://www.google.com/maps/search/Centro+Sportivo+Trento+Nord+Gardolo" },
+    ],
+  },
+  {
+    key: "shopping",
+    emoji: "🛍️",
+    title: "Mood shopping tranquillo",
+    short: "Scegli tu: Adigeo, centro Trento o Top Center.",
+    description: "Facciamo un giro easy senza programmi strani: guardiamo due negozi, ci prendiamo qualcosa di fresco e scegli tu dove andare. Opzione perfetta se vogliamo stare leggeri e avere anche un piano coperto se il meteo non collabora.",
+    time: "Quando vuoi dopo le 16:00, super flessibile.",
+    budget: "Variabile: può essere anche quasi zero se facciamo solo un giro.",
+    dress: "Normale da uscita comoda, con libertà di provare cose se ti va.",
+    backup: "Questo è già il piano B intelligente se fuori fa troppo caldo o piove.",
+    linkTitle: "Dove vuoi andare?",
+    links: [
+      { label: "Adigeo", url: "https://www.adigeo.com/" },
+      { label: "Centro Trento", url: "https://www.google.com/maps/search/negozi+centro+Trento" },
+      { label: "Top Center TN", url: "https://www.google.com/maps/search/Top+Center+Trento" },
+    ],
+  },
+  {
     key: "lago",
     emoji: "🌊",
     title: "Mood lago ma chill",
@@ -9,8 +59,10 @@ const plans = [
     budget: "Basso: gelato/bibita e benzina, senza aperitivi pesanti.",
     dress: "Comoda, scarpe tranquille, magari costume o telo se ti va.",
     backup: "Se il cielo minaccia, restiamo più vicini a Trento e trasformiamo tutto in gelato + passeggiata coperta.",
-    linkText: "Guarda la Calceranica Lake Color Run",
-    linkUrl: "https://www.visittrentino.info/it/guida/cosa-fare/eventi/calceranica-lake-color-run-2026_e_131826492",
+    linkTitle: "Vuoi farti un’idea migliore?",
+    links: [
+      { label: "Color Run", url: "https://www.visittrentino.info/it/guida/cosa-fare/eventi/calceranica-lake-color-run-2026_e_131826492" },
+    ],
   },
   {
     key: "easy",
@@ -44,8 +96,10 @@ const plans = [
     budget: "Quasi gratis: solo benzina e magari merenda. Se entriamo al Giardino Botanico, budget comunque tranquillo.",
     dress: "Scarpe comode e felpina leggera se saliamo.",
     backup: "Se il meteo è brutto, niente eroismi: scegliamo il mood gelato o VR in centro.",
-    linkText: "Guarda il Giardino Botanico Alpino Viote",
-    linkUrl: "https://www.muse.it/home/scopri-il-museo/il-muse-sul-territorio/giardino-botanico-alpino/",
+    linkTitle: "Vuoi farti un’idea migliore?",
+    links: [
+      { label: "Viote", url: "https://www.muse.it/home/scopri-il-museo/il-muse-sul-territorio/giardino-botanico-alpino/" },
+    ],
   },
   {
     key: "strano",
@@ -57,8 +111,10 @@ const plans = [
     budget: "Molto basso: attività gratuita + gelato/bibita.",
     dress: "Normale da centro, ma con mentalità da esploratrice.",
     backup: "È già abbastanza piano B, perché resta in città e vicino ai posti coperti.",
-    linkText: "Guarda l’esperienza VR a Cappella Vantini",
-    linkUrl: "https://www.visittrento.it/it/eventi/antiche-storie-d-acqua-a-cappella-vantini-torna-la-realta-virtuale",
+    linkTitle: "Vuoi farti un’idea migliore?",
+    links: [
+      { label: "Cappella Vantini VR", url: "https://www.visittrento.it/it/eventi/antiche-storie-d-acqua-a-cappella-vantini-torna-la-realta-virtuale" },
+    ],
   },
   {
     key: "random",
@@ -96,7 +152,8 @@ const resultBudget = document.querySelector("#resultBudget");
 const resultDress = document.querySelector("#resultDress");
 const resultBackup = document.querySelector("#resultBackup");
 const experienceLinkBox = document.querySelector("#experienceLinkBox");
-const experienceLink = document.querySelector("#experienceLink");
+const experienceLinkTitle = document.querySelector("#experienceLinkTitle");
+const experienceLinks = document.querySelector("#experienceLinks");
 
 let lastPlanKey = null;
 
@@ -120,6 +177,22 @@ function renderMoodCards() {
   });
 }
 
+function renderLinks(plan) {
+  const links = plan.links || (plan.linkUrl ? [{ label: plan.linkText || "Apri il sito", url: plan.linkUrl }] : []);
+
+  if (!links.length) {
+    experienceLinkBox.hidden = true;
+    experienceLinks.innerHTML = "";
+    return;
+  }
+
+  experienceLinkBox.hidden = false;
+  experienceLinkTitle.textContent = plan.linkTitle || "Vuoi farti un’idea migliore?";
+  experienceLinks.innerHTML = links.map((link) => `
+    <a href="${link.url}" target="_blank" rel="noopener">${link.label}</a>
+  `).join("");
+}
+
 function selectPlan(key) {
   const plan = key === "random" ? getRandomPlan() : plans.find((item) => item.key === key);
   if (!plan) return;
@@ -132,16 +205,7 @@ function selectPlan(key) {
   resultBudget.textContent = plan.budget;
   resultDress.textContent = plan.dress;
   resultBackup.textContent = plan.backup;
-
-  if (plan.linkUrl) {
-    experienceLinkBox.hidden = false;
-    experienceLink.href = plan.linkUrl;
-    experienceLink.textContent = plan.linkText || "Apri il sito dell’esperienza";
-  } else {
-    experienceLinkBox.hidden = true;
-    experienceLink.removeAttribute("href");
-    experienceLink.textContent = "";
-  }
+  renderLinks(plan);
 
   const message = `Ho scelto ${plan.emoji} ${plan.title}. Organizzati amore, mi devi portare via ❤️`;
   whatsappBtn.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
