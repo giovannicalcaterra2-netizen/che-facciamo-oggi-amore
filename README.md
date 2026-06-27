@@ -1,4 +1,4 @@
-# Che facciamo oggi, amore?
+# Che facciamo oggi, amo?
 
 Mini sito statico romantico/ironico per scegliere un pomeriggio insieme tramite emoji.
 
@@ -6,6 +6,7 @@ Mini sito statico romantico/ironico per scegliere un pomeriggio insieme tramite 
 
 - schermata iniziale con pulsante “No” che scappa;
 - scelta del mood tramite emoji;
+- widget meteo live per Trento con commenti ironici su pioggia e caldo;
 - card finale con piano, budget, dress code e piano B meteo;
 - link utili alle esperienze/eventi quando disponibili;
 - supporto a più link per la stessa proposta, utile per scegliere tra alternative;
