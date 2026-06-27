@@ -8,12 +8,16 @@ Mini sito statico romantico/ironico per scegliere un pomeriggio insieme tramite 
 - scelta del mood tramite emoji;
 - card finale con piano, budget, dress code e piano B meteo;
 - link utili alle esperienze/eventi quando disponibili;
+- supporto a più link per la stessa proposta, utile per scegliere tra alternative;
 - bottone WhatsApp con messaggio precompilato;
 - micro animazione cuore non invasiva, senza pioggia di emoji;
 - responsive per telefono.
 
 ## Proposte incluse
 
+- 🏞️ Orrido di Ponte Alto
+- 🏊 Lido / piscina
+- 🛍️ Shopping tranquillo: Adigeo, centro Trento, Top Center
 - 🌊 Lago / Calceranica
 - 🍦 Gelato e Albere
 - 🧺 Picnic povero ma romantico
