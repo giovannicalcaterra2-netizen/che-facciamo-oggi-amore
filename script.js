@@ -28,7 +28,7 @@ const plans = [
     linkTitle: "Info utili MUSE",
     links: [
       { label: "Sito MUSE", url: "https://www.muse.it/" },
-      { label: "Mostre ed eventi", url: "https://www.muse.it/eventi/" },
+      { label: "Calendario eventi", url: "https://www.muse.it/calendario-eventi/" },
       { label: "Indicazioni Maps", url: "https://www.google.com/maps/search/MUSE+Trento" },
     ],
   },
