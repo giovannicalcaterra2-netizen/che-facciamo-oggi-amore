@@ -247,9 +247,8 @@ function softHeart() {
   heart.addEventListener("animationend", () => heart.remove(), { once: true });
 }
 
-function getTomorrowTargetDate() {
+function getTodayTargetDate() {
   const target = new Date();
-  target.setDate(target.getDate() + 1);
   target.setHours(16, 0, 0, 0);
   return target;
 }
@@ -271,7 +270,7 @@ function getWeatherMood({ apparentTemp, rainChance, precipitation, weatherCode }
   if (storm) {
     return {
       emoji: "⛈️",
-      title: "Domani alle 16 il cielo vuole fare drama",
+      title: "Oggi alle 16 il cielo vuole fare drama",
       text: "Temporali possibili proprio nella fascia dell’uscita: outdoor solo se siamo coraggiosi o incoscienti; shopping/VR/bar vincono a mani basse.",
     };
   }
@@ -279,7 +278,7 @@ function getWeatherMood({ apparentTemp, rainChance, precipitation, weatherCode }
   if (rainy) {
     return {
       emoji: "🌧️",
-      title: "Domani alle 16: pioggia, che comportamento tossico",
+      title: "Oggi alle 16: pioggia, che comportamento tossico",
       text: `Rischio acqua ${rainChance}%: l’Orrido è già umido di suo, il cielo poteva evitare. Piano coperto fortemente candidato.`,
     };
   }
@@ -287,7 +286,7 @@ function getWeatherMood({ apparentTemp, rainChance, precipitation, weatherCode }
   if (apparentTemp >= 34) {
     return {
       emoji: "🥵",
-      title: "Domani alle 16 Trento modalità forno ventilato",
+      title: "Oggi alle 16 Trento modalità forno ventilato",
       text: `Percepiti ${apparentTemp}°C: uscire senza gelato è autolesionismo elegante. Lido, lago o qualunque posto con acqua diventano scelte moralmente superiori.`,
     };
   }
@@ -295,7 +294,7 @@ function getWeatherMood({ apparentTemp, rainChance, precipitation, weatherCode }
   if (apparentTemp >= 30) {
     return {
       emoji: "🌡️",
-      title: "Domani alle 16 fa caldo, ma non siamo deboli",
+      title: "Oggi alle 16 fa caldo, ma non siamo deboli",
       text: `Percepiti ${apparentTemp}°C: il sole sta facendo il fenomeno. Si può uscire, ma con bibita fredda e piano che non richieda eroismi inutili.`,
     };
   }
@@ -303,14 +302,14 @@ function getWeatherMood({ apparentTemp, rainChance, precipitation, weatherCode }
   if (cloudyCodes.has(weatherCode)) {
     return {
       emoji: "☁️",
-      title: "Domani alle 16 nuvole in modalità comparse",
+      title: "Oggi alle 16 nuvole in modalità comparse",
       text: "Meteo abbastanza civile: non bellissimo, non tragico. Tradotto: possiamo scegliere quasi tutto e dare la colpa al cielo solo se serve.",
     };
   }
 
   return {
     emoji: "🌤️",
-    title: "Domani alle 16 meteo stranamente collaborativo",
+    title: "Oggi alle 16 meteo stranamente collaborativo",
     text: "Il cielo non sembra voler sabotare la relazione. Lago, Orrido, passeggiata o lido: quasi tutto ha senso, incredibile ma vero.",
   };
 }
@@ -318,7 +317,7 @@ function getWeatherMood({ apparentTemp, rainChance, precipitation, weatherCode }
 async function loadWeather() {
   if (!weatherEmoji || !weatherTitle || !weatherText || !weatherMeta) return;
 
-  const target = getTomorrowTargetDate();
+  const target = getTodayTargetDate();
   const targetDay = target.toISOString().slice(0, 10);
   const targetHour = `${targetDay}T16:00`;
   const url = `https://api.open-meteo.com/v1/forecast?latitude=46.070&longitude=11.121&hourly=temperature_2m,apparent_temperature,precipitation,precipitation_probability,weather_code&start_date=${targetDay}&end_date=${targetDay}&timezone=Europe%2FRome`;
@@ -345,9 +344,9 @@ async function loadWeather() {
     weatherMeta.textContent = `${label} · ore 16 · percepiti ${apparentTemp}°C · rischio pioggia ${rainChance}%`;
   } catch (error) {
     weatherEmoji.textContent = "🫠";
-    weatherTitle.textContent = "Il meteo di domani fa il misterioso";
-    weatherText.textContent = "Non riesco a leggere il cielo per domani alle 16. Classico: quando serve collaborare, sparisce. Meglio controllare al volo dal telefono prima di partire.";
-    weatherMeta.textContent = "Trento · domani ore 16 · meteo non disponibile · colpa sua, non nostra";
+    weatherTitle.textContent = "Il meteo di oggi fa il misterioso";
+    weatherText.textContent = "Non riesco a leggere il cielo per oggi alle 16. Classico: quando serve collaborare, sparisce. Meglio controllare al volo dal telefono prima di partire.";
+    weatherMeta.textContent = "Trento · oggi ore 16 · meteo non disponibile · colpa sua, non nostra";
   }
 }
 
