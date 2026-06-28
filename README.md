@@ -10,7 +10,9 @@ Mini sito statico romantico/ironico per scegliere un pomeriggio insieme tramite 
 - card finale con piano, budget, dress code e piano B meteo;
 - link utili alle esperienze/eventi quando disponibili;
 - supporto a più link per la stessa proposta, utile per scegliere tra alternative;
-- bottone WhatsApp con messaggio precompilato;
+- bottone WhatsApp con messaggio precompilato quando viene scelta un’idea;
+- pulsante “Non mi piace nessuna di queste idee” con schermata teschio/Gessikah;
+- box per controproposta di Leti con mailto precompilato verso Gio;
 - micro animazione cuore non invasiva, senza pioggia di emoji;
 - responsive per telefono.
 
